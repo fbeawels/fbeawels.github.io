@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Jumeaux Numériques | Business Plan</title>
+    <style>
+        :root {
+            --foreground-rgb: 15, 23, 42;
+            --background-rgb: 255, 255, 255;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: rgb(var(--foreground-rgb));
+            background: rgb(var(--background-rgb));
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: #2563eb;
+        }
+        
+        .hero {
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+            background: linear-gradient(to right, #f0f4ff, #e0e7ff);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 48rem;
+            margin: 0 auto 2rem;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .button-primary {
+            background-color: #2563eb;
+            color: white;
+        }
+        
+        .button-primary:hover {
+            background-color: #1d4ed8;
+        }
+        
+        .button-secondary {
+            background-color: white;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+        }
+        
+        .button-secondary:hover {
+            background-color: #f0f4ff;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        .content {
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        .content h3 {
+            font-size: 1.5rem;
+            color: #2563eb;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content p {
+            margin-bottom: 1.25rem;
+        }
+        
+        .content ul, .content ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card h4 {
+            font-size: 1.25rem;
+            color: #2563eb;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+        
+        .footer-logo p {
+            font-size: 1rem;
+            font-weight: normal;
+            color: #9ca3af;
+            margin-top: 0.5rem;
+        }
+        
+        .footer-contact h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-contact p {
+            color: #9ca3af;
+            margin: 0;
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            text-align: center;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Digital Twins Platform</div>
+                <nav>
+                    <a href="#resume">Résumé Exécutif</a>
+                    <a href="#entreprise">Entreprise</a>
+                    <a href="#marche">Marché</a>
+                    <a href="#produit">Produit</a>
+                    <a href="#marketing">Marketing</a>
+                    <a href="#operations">Opérations</a>
+                    <a href="#finances">Finances</a>
+                    <a href="#risques">Risques</a>
+                    <a href="#calendrier">Calendrier</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Plateforme de Jumeaux Numériques</h1>
+            <p>Business plan pour une plateforme innovante basée sur l'IA agentique</p>
+            <div class="button-group">
+                <a href="#resume" class="button button-primary">Découvrir le projet</a>
+                <a href="#contact" class="button button-secondary">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="container">
+            <div class="section-title">
+                <h2>Résumé Exécutif</h2>
+                <p>Notre vision pour révolutionner le marché des jumeaux numériques</p>
+            </div>
+            <div class="content">
+                <h3>Vision et Mission</h3>
+                <p>Notre entreprise se positionne comme un acteur innovant dans le domaine des jumeaux numériques, avec une plateforme révolutionnaire basée sur l'intelligence artificielle agentique. Notre mission est de démocratiser l'accès aux jumeaux numériques en proposant une solution générique, flexible et puissante qui s'adapte à tous types d'environnements, qu'ils soient physiques (maisons, bâtiments, équipements industriels) ou numériques (applications métier, systèmes d'information).</p>
+                
+                <h3>La Plateforme de Jumeaux Numériques</h3>
+                <p>Notre plateforme se distingue par son architecture à trois niveaux d'agents intelligents :</p>
+                <ol>
+                    <li><strong>Agents d'interaction</strong> : Responsables de la communication avec les dispositifs physiques et numériques, ils collectent les données des capteurs, interprètent les interfaces utilisateurs et peuvent contrôler les équipements connectés.</li>
+                    <li><strong>Agents d'orchestration</strong> : Chargés de l'exécution, de l'orchestration et de la validation des tâches, ils coordonnent les flux de travail entre les différents composants du système.</li>
+                    <li><strong>Agents de raisonnement</strong> : Dotés de capacités d'analyse avancées, ils interprètent les données, prennent des décisions complexes et génèrent des insights actionnables.</li>
+                </ol>
+                
+                <h3>Opportunité de Marché</h3>
+                <p>Le marché des jumeaux numériques connaît une croissance exponentielle. Selon les études récentes, ce marché est évalué entre 9,9 et 22,77 milliards de dollars actuellement, avec des projections atteignant jusqu'à 160,56 milliards de dollars d'ici 2031, représentant un taux de croissance annuel composé (TCAC) entre 32,2% et 36,94%.</p>
+                
+                <h3>Modèle Économique</h3>
+                <p>Nous adoptons un modèle d'abonnement avec plusieurs niveaux de service, de l'essai gratuit à l'offre Entreprise, permettant de s'adapter aux besoins des organisations de toutes tailles.</p>
+                
+                <h3>Objectifs Financiers</h3>
+                <p>Avec un investissement initial de 50 000 €, nous visons un lancement commercial en septembre 2025, l'acquisition de 50 clients d'ici la fin 2025, et un chiffre d'affaires de 300 000 € la première année, avec une rentabilité atteinte au cours du deuxième exercice.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="entreprise">
+        <div class="container">
+            <div class="section-title">
+                <h2>Présentation de l'Entreprise</h2>
+                <p>Notre identité, nos valeurs et notre vision à long terme</p>
+            </div>
+            <div class="content">
+                <h3>Mission et Vision</h3>
+                <p>Notre mission est de transformer la façon dont les entreprises et les particuliers interagissent avec leurs environnements physiques et numériques en démocratisant l'accès aux jumeaux numériques. Nous envisageons un monde où chaque système dispose de son jumeau numérique intelligent, capable d'apprendre, de s'adapter et d'interagir de manière autonome.</p>
+                
+                <h3>Objectifs Stratégiques</h3>
+                <p>Nos objectifs s'articulent sur trois horizons temporels :</p>
+                <ul>
+                    <li><strong>Court terme (1-2 ans)</strong> : Développer et lancer notre plateforme, acquérir 50 clients, établir des partenariats stratégiques et constituer une équipe de 10 personnes.</li>
+                    <li><strong>Moyen terme (3-5 ans)</strong> : Étendre notre présence sur le marché européen, développer des solutions verticales spécifiques, atteindre 500 clients et un chiffre d'affaires annuel de 5 millions d'euros.</li>
+                    <li><strong>Long terme (5+ ans)</strong> : Expansion internationale, développement d'un écosystème complet avec une place de marché, et positionnement comme leader mondial des plateformes de jumeaux numériques agentiques.</li>
+                </ul>
+                
+                <h3>Structure et Équipe</h3>
+                <p>La société sera constituée sous forme de SAS avec un capital social initial de 10 000 €. Notre équipe fondatrice réunit des expertises complémentaires essentielles : direction générale, expertise technique en IA, conception de produits SaaS, et vente de solutions B2B.</p>
+                
+                <h3>Valeurs et Culture</h3>
+                <p>Nos valeurs fondamentales guideront toutes nos actions : innovation, excellence, collaboration, transparence et impact. Ces valeurs se traduiront par une culture d'entreprise dynamique, inclusive et orientée vers l'innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="marche">
+        <div class="container">
+            <div class="section-title">
+                <h2>Analyse du Marché</h2>
+                <p>Comprendre le potentiel et les opportunités du marché des jumeaux numériques</p>
+            </div>
+            <div class="content">
+                <h3>Taille et Croissance du Marché</h3>
+                <p>Le marché des jumeaux numériques connaît une croissance exponentielle, porté par la transformation numérique des entreprises et l'adoption croissante des technologies IoT, de l'IA et du cloud computing. Selon plusieurs sources, ce marché est évalué entre 9,9 et 22,77 milliards de dollars actuellement, avec des projections atteignant jusqu'à 160,56 milliards de dollars d'ici 2031.</p>
+                
+                <h3>Segmentation du Marché</h3>
+                <p>Le marché se segmente par type d'application (conception de produits, surveillance d'équipements, support de processus), par secteur d'activité (fabrication, automobile, énergie, santé, bâtiments) et par région géographique, avec l'Amérique du Nord en tête et l'Asie-Pacifique comme région à la croissance la plus rapide.</p>
+                
+                <h3>Besoins des Clients</h3>
+                <p>Les besoins communs à tous les secteurs incluent l'interopérabilité, la facilité d'utilisation, l'évolutivité, la sécurité et un ROI démontrable. Chaque secteur présente également des besoins spécifiques, comme l'optimisation des processus de production pour l'industrie ou l'efficacité énergétique pour les bâtiments.</p>
+                
+                <h3>Tendances et Opportunités</h3>
+                <p>Parmi les tendances émergentes, on note l'intégration de l'IA générative, les jumeaux numériques collaboratifs, et la démocratisation de ces technologies pour les PME. Les opportunités inexploitées incluent les jumeaux numériques agentiques capables d'apprentissage autonome et les plateformes génériques permettant de créer facilement des jumeaux pour tout type de système.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="produit">
+        <div class="container">
+            <div class="section-title">
+                <h2>Produit et Services</h2>
+                <p>Notre solution innovante de jumeaux numériques basée sur l'IA agentique</p>
+            </div>
+            <div class="content">
+                <h3>Architecture à Trois Niveaux d'Agents</h3>
+                <p>Le cœur de notre innovation réside dans notre architecture à trois niveaux d'agents intelligents :</p>
+                <div class="card">
+                    <h4>Niveau 1 : Agents d'Interaction</h4>
+                    <p>Ces agents constituent la couche fondamentale et sont responsables de l'interface directe avec le monde physique ou numérique. Ils collectent les données des capteurs, interprètent les interfaces utilisateurs et peuvent contrôler les équipements connectés.</p>
+                </div>
+                <div class="card">
+                    <h4>Niveau 2 : Agents d'Orchestration</h4>
+                    <p>Cette couche intermédiaire coordonne les flux de travail et assure la cohérence des opérations. Ces agents sont chargés de l'exécution, de l'orchestration et de la validation des tâches entre les différents composants du système.</p>
+                </div>
+                <div class="card">
+                    <h4>Niveau 3 : Agents de Raisonnement</h4>
+                    <p>Ces agents de haut niveau constituent le "cerveau" du jumeau numérique. Ils sont dotés de capacités d'analyse avancées, d'apprentissage continu et de prise de décision intelligente pour générer des insights actionnables.</p>
+                </div>
+                
+                <h3>Technologies Clés</h3>
+                <p>Notre plateforme s'appuie sur trois technologies principales :</p>
+                <ul>
+                    <li><strong>Langflow</strong> : Outil low-code qui facilite la création d'agents IA et de workflows</li>
+                    <li><strong>Qdrant</strong> : Base de données vectorielle pour la recherche par similarité et la gestion des connaissances</li>
+                    <li><strong>OpenWebUI</strong> : Interface utilisateur extensible et auto-hébergée pour une expérience intuitive</li>
+                </ul>
+                
+                <h3>Cas d'Utilisation</h3>
+                <p>Notre plateforme s'adapte à de nombreux cas d'utilisation :</p>
+                <ul>
+                    <li>Maison connectée (contrôle du chauffage, éclairage, sécurité, piscine)</li>
+                    <li>Applications d'entreprise (formation, support, optimisation)</li>
+                    <li>Équipements industriels (maintenance prédictive, optimisation)</li>
+                    <li>Bâtiments commerciaux (gestion de l'énergie, confort, sécurité)</li>
+                    <li>Infrastructures urbaines (optimisation des flux, ressources)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="marketing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Stratégie Marketing et Commerciale</h2>
+                <p>Notre approche pour conquérir et fidéliser nos clients</p>
+            </div>
+            <div class="content">
+                <h3>Positionnement de Marché</h3>
+                <p>Notre plateforme se positionne comme une solution innovante et accessible qui démocratise l'accès aux jumeaux numériques. Nous nous différencions par notre architecture unique à trois niveaux d'agents, notre accessibilité pour un public plus large, et notre proposition de valeur centrée sur des bénéfices tangibles et mesurables.</p>
+                
+                <h3>Modèle d'Abonnement</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="card">
+                        <h4>Standard</h4>
+                        <p style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">99€<span style="font-size: 0.875rem; font-weight: normal; color: #6b7280;">/mois</span></p>
+                        <ul>
+                            <li>Jusqu'à 5 jumeaux numériques</li>
+                            <li>Fonctionnalités essentielles</li>
+                            <li>Support par email</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">Idéal pour les PME et les projets pilotes</p>
+                    </div>
+                    <div class="card" style="background-color: #f0f4ff; border: 1px solid #bfdbfe;">
+                        <h4>Professionnel</h4>
+                        <p style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">499€<span style="font-size: 0.875rem; font-weight: normal; color: #6b7280;">/mois</span></p>
+                        <ul>
+                            <li>Jusqu'à 20 jumeaux numériques</li>
+                            <li>Fonctionnalités avancées</li>
+                            <li>Intégrations personnalisées</li>
+                            <li>Support prioritaire</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">Pour les entreprises moyennes et les départements IT</p>
+                    </div>
+                </div>
+                
+                <h3>Canaux de Distribution</h3>
+                <p>Notre stratégie de distribution combine la vente directe via notre site web et notre équipe commerciale, des partenariats stratégiques avec des intégrateurs de solutions IoT et des consultants en transformation numérique, ainsi qu'une présence sur les principales marketplaces cloud.</p>
+                
+                <h3>Plan d'Acquisition de Clients</h3>
+                <p>Notre stratégie d'acquisition suit une approche progressive :</p>
+                <ul>
+                    <li><strong>Phase de lancement (2025)</strong> : 50 clients, focus sur les early adopters</li>
+                    <li><strong>Phase de croissance (2026)</strong> : 200 clients, élargissement des segments ciblés</li>
+                    <li><strong>Phase d'expansion (2027-2028)</strong> : 500+ clients, internationalisation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="operations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Plan Opérationnel</h2>
+                <p>Notre organisation et nos processus pour délivrer excellence et innovation</p>
+            </div>
+            <div class="content">
+                <h3>Structure Organisationnelle</h3>
+                <p>Notre structure initiale sera volontairement légère et flexible, avec une équipe de 8 à 10 personnes organisée autour des fonctions essentielles : Direction Générale, Équipe Technique, Équipe Produit, et Équipe Commerciale & Marketing.</p>
+                
+                <h3>Plan de Recrutement</h3>
+                <p>Notre stratégie de recrutement se déploiera en plusieurs phases :</p>
+                <ul>
+                    <li><strong>Pré-lancement (Q1-Q2 2025)</strong> : 2 développeurs full-stack seniors, 1 spécialiste IA/ML, 1 designer UX/UI</li>
+                    <li><strong>Lancement (Q3-Q4 2025)</strong> : 1 responsable commercial, 1 responsable marketing, 1 développeur frontend, 1 ingénieur support</li>
+                    <li><strong>Expansion (2026)</strong> : Renforcement des équipes techniques et commerciales</li>
+                </ul>
+                
+                <h3>Processus de Développement</h3>
+                <p>Nous adopterons une approche Agile (Scrum) avec des sprints de 2 semaines, une intégration continue et un déploiement continu (CI/CD), des tests automatisés à tous les niveaux, et des revues de code systématiques pour maintenir la qualité.</p>
+                
+                <h3>Infrastructure Technique</h3>
+                <p>Notre plateforme sera construite sur une architecture moderne, évolutive et résiliente :</p>
+                <ul>
+                    <li>Architecture microservices pour une évolutivité facilitée</li>
+                    <li>Approche API-first pour des intégrations flexibles</li>
+                    <li>Infrastructure cloud sur AWS avec une approche multi-cloud à terme</li>
+                    <li>Sécurité by design intégrée à toutes les étapes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="finances">
+        <div class="container">
+            <div class="section-title">
+                <h2>Plan Financier</h2>
+                <p>Notre modèle économique et nos projections financières</p>
+            </div>
+            <div class="content">
+                <h3>Investissement Initial</h3>
+                <p>L'investissement initial de 50 000€ sera alloué comme suit :</p>
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Développement</span>
+                        <span style="font-weight: 600;">30 000€</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Infrastructure</span>
+                        <span style="font-weight: 600;">5 000€</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Marketing</span>
+                        <span style="font-weight: 600;">10 000€</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span>Juridique & Admin</span>
+                        <span style="font-weight: 600;">5 000€</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; margin-top: 0.5rem; border-top: 1px solid #e5e7eb;">
+                        <span style="font-weight: 700;">Total</span>
+                        <span style="font-weight: 700;">50 000€</span>
+                    </div>
+                </div>
+                
+                <h3>Prévisions de Revenus</h3>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem;">
+                        <thead>
+                            <tr style="background-color: #f3f4f6;">
+                                <th style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb; text-align: left;">Année</th>
+                                <th style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb; text-align: left;">Clients</th>
+                                <th style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb; text-align: left;">CA Total</th>
+                                <th style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb; text-align: left;">Croissance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">2025 (4 mois)</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">50</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">105 000€</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">-</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">2026</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">200</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">900 000€</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">+757%</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">2027</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">350</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">1 575 000€</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">+75%</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">2028</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">500</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">2 250 000€</td>
+                                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #e5e7eb;">+43%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>Seuil de Rentabilité</h3>
+                <p>Selon nos projections, nous atteindrons le seuil de rentabilité au cours du premier trimestre 2027, soit environ 18 mois après le lancement commercial.</p>
+                
+                <h3>Stratégie de Financement</h3>
+                <p>Notre plan de développement nécessite un financement total d'environ 850 000€ sur les trois premières années :</p>
+                <ul>
+                    <li><strong>Phase d'amorçage</strong> : 50 000€ (déjà sécurisés)</li>
+                    <li><strong>Seed (Fin 2025)</strong> : 800 000€ auprès de Business Angels et fonds d'amorçage</li>
+                    <li><strong>Série A (Potentielle, 2028)</strong> : 2-3M€ pour l'expansion internationale</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="risques">
+        <div class="container">
+            <div class="section-title">
+                <h2>Analyse des Risques</h2>
+                <p>Identification et stratégies d'atténuation des risques potentiels</p>
+            </div>
+            <div class="content">
+                <h3>Risques Principaux</h3>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div class="card">
+                        <h4>Risques Technologiques</h4>
+                        <ul>
+                            <li>Difficultés d'intégration des technologies clés</li>
+                            <li>Évolution rapide des technologies</li>
+                            <li>Problèmes de performance pour le traitement en temps réel</li>
+                            <li>Failles de sécurité potentielles</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem; font-size: 0.875rem; color: #4b5563;">
+                            <strong>Stratégies d'atténuation :</strong> Prototypes d'intégration précoces, architecture modulaire, tests de performance dès les premières phases, audits de sécurité réguliers.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>Risques Commerciaux</h4>
+                        <ul>
+                            <li>Adoption lente du marché</li>
+                            <li>Entrée de concurrents puissants</li>
+                            <li>Cycle de vente long chez les clients entreprises</li>
+                            <li>Difficulté à maintenir un taux de rétention élevé</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem; font-size: 0.875rem; color: #4b5563;">
+                            <strong>Stratégies d'atténuation :</strong> Programme de clients pilotes, démonstration claire du ROI, diversification du pipeline commercial, programme de customer success proactif.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>Risques Financiers</h4>
+                        <ul>
+                            <li>Sous-capitalisation</li>
+                            <li>Burn rate plus élevé que prévu</li>
+                            <li>Difficulté à lever des fonds supplémentaires</li>
+                            <li>Rentabilité tardive</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem; font-size: 0.875rem; color: #4b5563;">
+                            <strong>Stratégies d'atténuation :</strong> Plan de financement par étapes, suivi rigoureux des dépenses, diversification des sources de financement, focus initial sur les segments à cycle de vente court.
+                        </p>
+                    </div>
+                </div>
+                
+                <h3>Plan de Contingence</h3>
+                <p>En plus des stratégies d'atténuation, nous avons élaboré un plan de contingence pour répondre rapidement aux risques majeurs s'ils se matérialisent, incluant des scénarios pour les difficultés techniques, l'adoption lente du marché, les problèmes de financement, l'entrée de concurrents majeurs, et la perte de talents clés.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="calendrier">
+        <div class="container">
+            <div class="section-title">
+                <h2>Calendrier et Jalons</h2>
+                <p>Notre feuille de route vers le succès</p>
+            </div>
+            <div class="content">
+                <h3>Phases de Développement</h3>
+                <div style="position: relative; padding-left: 2rem; margin-bottom: 2rem;">
+                    <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background-color: #bfdbfe;"></div>
+                    
+                    <div style="position: relative; padding-bottom: 2rem;">
+                        <div style="position: absolute; left: -0.5rem; top: 0; width: 1rem; height: 1rem; border-radius: 9999px; background-color: #2563eb;"></div>
+                        <h4 style="margin-top: 0; margin-bottom: 0.5rem;">Phase 1 : Préparation et Conception</h4>
+                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Mai - Juillet 2025</p>
+                        <ul>
+                            <li>Finalisation du business plan et de la stratégie</li>
+                            <li>Constitution juridique de l'entreprise</li>
+                            <li>Recrutement des premiers membres de l'équipe technique</li>
+                            <li>Conception détaillée de l'architecture technique</li>
+                            <li>Prototypage des composants clés</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="position: relative; padding-bottom: 2rem;">
+                        <div style="position: absolute; left: -0.5rem; top: 0; width: 1rem; height: 1rem; border-radius: 9999px; background-color: #2563eb;"></div>
+                        <h4 style="margin-top: 0; margin-bottom: 0.5rem;">Phase 2 : Développement du MVP</h4>
+                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Août - Octobre 2025</p>
+                        <ul>
+                            <li>Développement des trois niveaux d'agents</li>
+                            <li>Création de l'interface utilisateur</li>
+                            <li>Intégration et tests système</li>
+                            <li>Finalisation du MVP avec les fonctionnalités essentielles</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="position: relative; padding-bottom: 2rem;">
+                        <div style="position: absolute; left: -0.5rem; top: 0; width: 1rem; height: 1rem; border-radius: 9999px; background-color: #2563eb;"></div>
+                        <h4 style="margin-top: 0; margin-bottom: 0.5rem;">Phase 3 : Tests et Validation</h4>
+                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Novembre - Décembre 2025</p>
+                        <ul>
+                            <li>Recrutement des clients pilotes</li>
+                            <li>Déploiement chez les premiers clients</li>
+                            <li>Collecte et analyse des retours</li>
+                            <li>Itérations et améliorations</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="position: relative; padding-bottom: 2rem;">
+                        <div style="position: absolute; left: -0.5rem; top: 0; width: 1rem; height: 1rem; border-radius: 9999px; background-color: #2563eb;"></div>
+                        <h4 style="margin-top: 0; margin-bottom: 0.5rem;">Phase 4 : Préparation au Lancement Commercial</h4>
+                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Janvier - Mars 2026</p>
+                        <ul>
+                            <li>Finalisation du produit</li>
+                            <li>Préparation des supports marketing</li>
+                            <li>Mise en place de l'infrastructure de production</li>
+                            <li>Préparation de l'équipe commerciale et du support client</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="position: relative;">
+                        <div style="position: absolute; left: -0.5rem; top: 0; width: 1rem; height: 1rem; border-radius: 9999px; background-color: #2563eb;"></div>
+                        <h4 style="margin-top: 0; margin-bottom: 0.5rem;">Phase 5 : Lancement Commercial</h4>
+                        <p style="color: #4b5563; margin-bottom: 0.5rem;">Avril 2026</p>
+                        <ul>
+                            <li>Événement de lancement officiel</li>
+                            <li>Activation des campagnes marketing</li>
+                            <li>Acquisition des premiers clients commerciaux</li>
+                            <li>Développement des partenariats stratégiques</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Objectifs Clés</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div class="card">
+                        <h4>Court Terme (1 an)</h4>
+                        <ul>
+                            <li>Plateforme stable avec les trois niveaux d'agents</li>
+                            <li>50 clients payants</li>
+                            <li>300 000€ de chiffre d'affaires</li>
+                            <li>Équipe de 10 personnes</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Moyen Terme (2-3 ans)</h4>
+                        <ul>
+                            <li>Solutions verticales pour 3 secteurs clés</li>
+                            <li>350 clients actifs</li>
+                            <li>1,5M€ de chiffre d'affaires annuel</li>
+                            <li>Rentabilité opérationnelle</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Long Terme (5+ ans)</h4>
+                        <ul>
+                            <li>Leader des jumeaux numériques agentiques</li>
+                            <li>1000+ clients actifs</li>
+                            <li>10M€+ de chiffre d'affaires annuel</li>
+                            <li>Présence mondiale</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div>Digital Twins Platform</div>
+                    <p>Transformez vos systèmes avec l'IA agentique</p>
+                </div>
+                <div id="contact" class="footer-contact">
+                    <h3>Contact</h3>
+                    <p>info@digital-twins-platform.com</p>
+                    <p>+33 (0)1 23 45 67 89</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Digital Twins Platform. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
